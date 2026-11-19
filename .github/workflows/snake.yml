@@ -1,0 +1,34 @@
+name: Animated contribution graph
+
+# Rebuilds the snake animation of your contribution graph every 12 hours,
+# whenever this repo changes, and on demand (Actions tab > Run workflow).
+on:
+  schedule:
+    - cron: "17 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg?color_snake=#0B0B0C
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=#CDE600
+
+      # Publish the two SVGs to a separate "output" branch for the README.
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          keep_history: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

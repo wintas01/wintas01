@@ -42,6 +42,14 @@ I've delivered a university e-library and website, a ticketing platform, a VTU p
 
 **Also:** AI integration (LLM APIs) · AI-assisted development · prompt engineering · UI/UX design
 
+## 📈 My GitHub activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wintas01/wintas01/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/wintas01/wintas01/output/github-snake.svg" />
+  <img alt="Animated snake eating my GitHub contribution graph" src="https://raw.githubusercontent.com/wintas01/wintas01/output/github-snake.svg" width="100%" />
+</picture>
+
 ## 🚀 Featured work
 
 | Project | What it is | Links |
